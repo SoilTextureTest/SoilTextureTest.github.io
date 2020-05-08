@@ -150,12 +150,12 @@ div.wealth {
     border-left-style: solid;
 }
 div.liberty {
-    background-color: #9dc284;
+    background-color: #46742c;
     text-align: left;
     border-right-style: solid;
 }
 div.authority {
-    background-color: #46742c;
+    background-color: #9dc284;
     text-align: right;
     border-left-style: solid;
 }
