@@ -150,32 +150,32 @@ div.wealth {
     border-left-style: solid;
 }
 div.liberty {
-    background-color: #46742c;
+    background-color: #9dc284;
     text-align: left;
     border-right-style: solid;
 }
 div.authority {
-    background-color: #9dc284;
+    background-color: #46742c;
     text-align: right;
     border-left-style: solid;
 }
 div.peace {
-    background-color: #dc944b;
+    background-color: #aa6324;
     text-align: right;
     border-left-style: solid;
 }
 div.might {
-    background-color: #aa6324;
+    background-color: #dc944b;
     text-align: left;
     border-right-style: solid;
 }
 div.progress {
-    background-color: #4c85c1;
+    background-color: #1f538f;
     text-align: right;
     border-left-style: solid;
 }
 div.tradition {
-    background-color: #1f538f;
+    background-color: #4c85c1;
     text-align: left;
     border-right-style: solid;
 }
