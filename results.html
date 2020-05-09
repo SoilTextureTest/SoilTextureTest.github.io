@@ -129,6 +129,7 @@
         dist += Math.pow(Math.abs(ideologies[i].stats.scty - progress), 1.73856063)
         if (dist < ideodist) {
             ideology = ideologies[i].name
+	    ideodesc = ideologies[i].desc
             ideodist = dist
         }
     }
