@@ -64,7 +64,7 @@ ideologies = [
         }
     },
     {
-        "name": "Clay Loam (Centrist)",
+        "name": "Clay Loam",
         "stats": {
             "econ": 50,
             "dipl": 50,
