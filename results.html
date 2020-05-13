@@ -1,60 +1,3 @@
-<head>
-<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
-<link href='style.css' rel='stylesheet' type='text/css'>
-<title>SoilTextureTest Results</title>
-<link rel="icon" type="x-icon" href="icon.png">
-<link rel="shortcut icon" type="x-icon" href="icon.png">
-<meta charset="utf-8">
-<script>
-  version = "A Soil Texture evaluation Test" 
-</script>
-</head>
-<script type="application/javascript"
-        src="ideologies.js">
-</script>
-
-<body>
-<h1>SoilTextureTest</h1>
-<hr>
-
-<h1>Results</h1>
-
-<h2>Sand Axis: <span class="weight-300" id="economic-label"></span></h2>
-<div class="axis">
-    <img id="img-equality" src="value_images/sand.png" height="128pt"/>
-    <div class="bar equality" id="bar-equality"><div class="text-wrapper" id="equality"></div></div>
-    <div class="bar wealth" id="bar-wealth"><div class="text-wrapper" id="wealth"></div></div>
-    <img id="img-wealth" src="value_images/sandless.png" height="128pt"/>
-</div>
-<h2>Clay Axis: <span class="weight-300" id="diplomatic-label"></span></h2>
-<div class="axis">
-    <img id="img-might" src="value_images/clay.png" height="128pt"/>
-    <div class="bar might" id="bar-might"><div class="text-wrapper" id="might"></div></div>
-    <div class="bar peace" id="bar-peace"><div class="text-wrapper" id="peace"></div></div>
-    <img id="img-peace" src="value_images/clayless.png" height="128pt"/>
-</div>
-<h2>Silt Axis: <span class="weight-300" id="state-label"></span></h2>
-<div class="axis">
-    <img id="img-liberty" src="value_images/silt.png" height="128pt"/>
-    <div class="bar liberty" id="bar-liberty"><div class="text-wrapper" id="liberty"></div></div>
-    <div class="bar authority" id="bar-authority"><div class="text-wrapper" id="authority"></div></div>
-    <img id="img-authority" src="value_images/siltless.png" height="128pt"/>
-</div>
-<h2>Density Axis: <span class="weight-300" id="society-label"></span></h2>
-<div class="axis">
-    <img id="img-tradition" src="value_images/solid.png" height="128pt"/>
-    <div class="bar tradition" id="bar-tradition"><div class="text-wrapper" id="tradition"></div></div>
-    <div class="bar progress" id="bar-progress"><div class="text-wrapper" id="progress"></div></div>
-    <img id="img-progress" src="value_images/loose.png" height="128pt"/>
-</div>
-<h2>Closest Match: <span class="weight-300" id="ideology-label"></span></h2>
-	
-<p>Ideological matching is a work in progress, and is much less accurate than the values and axes.</p>
-<p>You can send these results by copying and pasting the URL at the top of the page or using the image below. Think your matched ideology was wrong? Want to help us calibrate the test? Fill in this <a href="https://forms.gle/7wjTxVXZqdxktWWD9">form</a>, to send me any comments, questions, or criticism. </p>
-<hr/>
-<img src="" id="banner">
-<button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;">Back</button> <br>
-
 <script>
     function getQueryVariable(variable)
     {
@@ -77,7 +20,7 @@
         }
     }
 
-    econArray = ["Extremely Sandy","Sand","Mostly Sand","Neutral","Partially Sand","Slightly Sand","Not Sand"]
+     econArray = ["Extremely Sandy","Sand","Mostly Sand","Neutral","Partially Sand","Slightly Sand","Not Sand"]
     diplArray = ["Extremely Clayish","Clay","Mostly Clay","Neutral","Partially Clay","Slightly Clay","Not Clay"]
     govtArray = ["Extremely Silt-like","Silt","Mostly Silt","Neutral","Partially Silt","Slightly Silt","Not Silt"]
     sctyArray = ["Very Solid","Solid","Mostly Solid","Solid Powder","Powder","Very Powdery","Liquid or Gas"]
@@ -118,7 +61,6 @@
     document.getElementById("society-label").innerHTML = setLabel(progress, sctyArray)
 
     ideology = ""
-	ideodesc = ""
     ideodist = Infinity
     for (var i = 0; i < ideologies.length; i++) {
         dist = 0
@@ -128,13 +70,11 @@
         dist += Math.pow(Math.abs(ideologies[i].stats.scty - progress), 1.73856063)
         if (dist < ideodist) {
             ideology = ideologies[i].name
-	    ideodesc = ideologies[i].desc
             ideodist = dist
         }
     }
     document.getElementById("ideology-label").innerHTML = ideology
-    document.getElementById("ideodesc-label").innerHTML = ideology
-	
+
     function createImage(src, x, y, w, h) {
         img = new Image ()
         img.src = src
@@ -168,7 +108,8 @@
         img = document.getElementById("img-progress")
         ctx.drawImage(img, 680, 530, 100, 100)
 
-        ctx.fillStyle="#222222"
+        
+ctx.fillStyle="#222222"
         ctx.fillRect(120, 180, 560, 80)
         ctx.fillRect(120, 300, 560, 80)
         ctx.fillRect(120, 420, 560, 80)
@@ -195,7 +136,6 @@
         ctx.fillText("SoilTexture", 20, 90)
         ctx.font="50px Montserrat"
         ctx.fillText(ideology, 20, 140)
-
         ctx.textAlign="left"
         if (equality  > 30) {ctx.fillText(equality + "%", 130, 237.5)}
         if (might     > 30) {ctx.fillText(might + "%", 130, 357.5)}
@@ -209,7 +149,7 @@
 
         ctx.font="300 30px Montserrat"
         ctx.fillText("SoilTextureTest.github.io", 780, 60)
-		ctx.fillText(version, 780, 90)
+	ctx.fillText(version, 780, 90)
         ctx.textAlign="center"
         ctx.fillText("Economic Axis: " + document.getElementById("economic-label").innerHTML, 400, 175)
         ctx.fillText("Diplomatic Axis: " + document.getElementById("diplomatic-label").innerHTML, 400, 295)
