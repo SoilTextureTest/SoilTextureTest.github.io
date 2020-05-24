@@ -18,7 +18,7 @@ questions = [
         }
     },
     {
-        "question": "Agriculture is more important then business development.",
+        "question": "Agriculture is more important than business development.",
         "effect": {
             "econ": 2,
             "dipl": 2,
@@ -99,11 +99,38 @@ questions = [
         }
     },
     {
-        "question": "The texture is kind of pointy, as it feels a bit sharp.",
+        "question": "The government should regulate more in public beach areas.",
         "effect": {
-            "econ": 5,
+            "econ": -5,
             "dipl": 0,
             "govt": 0,
+            "scty": 0
+        }
+    },
+    {
+        "question": "Nothingness is what we should all be more afraid of.",
+        "effect": {
+            "econ": 2,
+            "dipl": 2,
+            "govt": 2,
+            "scty": 5
+        }
+    },
+    {
+        "question": "A void is not as chaotic and bad as many people think.",
+        "effect": {
+            "econ": 0,
+            "dipl": 0,
+            "govt": 0,
+            "scty": -5
+        }
+    },
+    {
+        "question": "Silt is more important than either Sand or Clay.",
+        "effect": {
+            "econ": 0,
+            "dipl": 0,
+            "govt": 5,
             "scty": 0
         }
     }
