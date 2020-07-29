@@ -63,24 +63,7 @@
 	
 <script>
 
-    //Compass
-    const urlParams = new URLSearchParams(window.location.search);
-        sand  = parseFloat(urlParams.get("e"))
-        clay   = parseFloat(urlParams.get("d"))
-        silt   = parseFloat(urlParams.get("g"))
-        dense   = parseFloat(urlParams.get("s"))
-	
-    window.onload = function() {	
-	var canvas = document.getElementById("compass");
-        var ctx = canvas.getContext("2d");
-        var img = document.getElementById("compassbg");
-        ctx.drawImage(img, 0, 0);
-	    
-    ctx.beginPath();
-	        ctx.arc( (10 * (10 - sand) ) + (5 * (10 + clay) ) + (5 * (10 + silt) ), (5 * (10 + clay) ) + (5 * (10 + silt) ), 15, 0, 2 * Math.PI);
-	        ctx.fillStyle = "red"
-	        ctx.fill();
-	        ctx.stroke();
+
 	    
     //Values
     function getQueryVariable(variable)
@@ -242,5 +225,25 @@ ctx.fillStyle="#222222"
 
         document.getElementById("banner").src = c.toDataURL();
     }
+	
+    //Compass
+    /*const urlParams = new URLSearchParams(window.location.search);
+        sand  = parseFloat(urlParams.get("e"))
+        clay   = parseFloat(urlParams.get("d"))
+        silt   = parseFloat(urlParams.get("g"))
+        dense   = parseFloat(urlParams.get("s"))
+	
+    window.onload = function() {	
+	var canvas = document.getElementById("compass");
+        var ctx = canvas.getContext("2d");
+        var img = document.getElementById("compassbg");
+        ctx.drawImage(img, 0, 0);
+	    
+    ctx.beginPath();
+	        ctx.arc( (10 * (10 - sand) ) + (5 * (10 + clay) ) + (5 * (10 + silt) ), (5 * (10 + clay) ) + (5 * (10 + silt) ), 15, 0, 2 * Math.PI);
+	        ctx.fillStyle = "red"
+	        ctx.fill();
+	        ctx.stroke(); */
+	
     </script>
 </body>
