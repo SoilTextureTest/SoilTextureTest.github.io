@@ -6,7 +6,7 @@
 <link rel="shortcut icon" type="x-icon" href="icon.png">
 <meta charset="utf-8">
 <script>
-  version = "v2.0" 
+  version = "v1.1.3" 
 </script>
 </head>
 <script type="application/javascript"
@@ -18,9 +18,6 @@
 <hr>
 
 <h1>Results</h1>
-
-<img id="compassbg" src="soilcompassbg.png" alt="Image" style="display: none;" />
-<canvas id="compass" width="2500" height="1500" style="border:1px solid #d3d3d3;"></canvas>
 
 <h2>Sand Axis: <span class="weight-300" id="economic-label"></span></h2>
 <div class="axis">
@@ -52,18 +49,15 @@
 </div>
 <h2>Closest Match: <span class="weight-300" id="ideology-label"></span></h2>
 	
-<p>Ideological matching is a work in progress, and is much less accurate than the values and axes. Note that this is determined by the axes, and could differ from the compass.</p>
+<p>Ideological matching is a work in progress, and is much less accurate than the values and axes.</p>
 <p>You can send these results by copying and pasting the URL at the top of the page or using the image below. Think your matched ideology was wrong? Want to help us calibrate the test? Fill in this <a href="https://forms.gle/7wjTxVXZqdxktWWD9">form</a>, to send me any comments, questions, or criticism. </p>
 <hr/>
 <img src="" id="banner">
-	
 <button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;">Back</button> <br>
 	
 	
 	
 <script>
-	    
-    //Values
     function getQueryVariable(variable)
     {
            var query = window.location.search.substring(1)
@@ -102,37 +96,37 @@
         	{return ""}
     }
 
-    sand   = getQueryVariable("e")
-    clay   = getQueryVariable("d")
-    silt   = getQueryVariable("g")
-    solid  = getQueryVariable("s")
-    sandless = (100 - sand).toFixed(1)
-    clayless = (100 - clay).toFixed(1)
-    siltless = (100 - silt).toFixed(1)
-    loose    = (100 - solid).toFixed(1)
+    equality  = getQueryVariable("e")
+    peace     = getQueryVariable("d")
+    liberty   = getQueryVariable("g")
+    progress  = getQueryVariable("s")
+    wealth    = (100 - equality).toFixed(1)
+    might     = (100 - peace   ).toFixed(1)
+    authority = (100 - liberty ).toFixed(1)
+    tradition = (100 - progress).toFixed(1)
 
-    setBarValue("sand", sand)
-    setBarValue("clay", clay)
-    setBarValue("silt", silt)
-    setBarValue("solid", solid)
-    setBarValue("sandless", sandless)
-    setBarValue("clayless", clayless)
-    setBarValue("siltless", siltless)
-    setBarValue("loose", loose)
+    setBarValue("equality", equality)
+    setBarValue("wealth", wealth)
+    setBarValue("peace", peace)
+    setBarValue("might", might)
+    setBarValue("liberty", liberty)
+    setBarValue("authority", authority)
+    setBarValue("progress", progress)
+    setBarValue("tradition", tradition)
 
-    document.getElementById("economic-label").innerHTML = setLabel(sand, econArray)
-    document.getElementById("diplomatic-label").innerHTML = setLabel(clay, diplArray)
-    document.getElementById("state-label").innerHTML = setLabel(silt, govtArray)
-    document.getElementById("society-label").innerHTML = setLabel(solid, sctyArray)
+    document.getElementById("economic-label").innerHTML = setLabel(equality, econArray)
+    document.getElementById("diplomatic-label").innerHTML = setLabel(peace, diplArray)
+    document.getElementById("state-label").innerHTML = setLabel(liberty, govtArray)
+    document.getElementById("society-label").innerHTML = setLabel(progress, sctyArray)
 
     ideology = ""
     ideodist = Infinity
     for (var i = 0; i < ideologies.length; i++) {
         dist = 0
-        dist += Math.pow(Math.abs(ideologies[i].stats.econ - sand), 2)
-        dist += Math.pow(Math.abs(ideologies[i].stats.govt - clay), 2)
-        dist += Math.pow(Math.abs(ideologies[i].stats.dipl - silt), 1.73856063)
-        dist += Math.pow(Math.abs(ideologies[i].stats.scty - solid), 1.73856063)
+        dist += Math.pow(Math.abs(ideologies[i].stats.econ - equality), 2)
+        dist += Math.pow(Math.abs(ideologies[i].stats.govt - liberty), 2)
+        dist += Math.pow(Math.abs(ideologies[i].stats.dipl - peace), 1.73856063)
+        dist += Math.pow(Math.abs(ideologies[i].stats.scty - progress), 1.73856063)
         if (dist < ideodist) {
             ideology = ideologies[i].name
             ideodist = dist
@@ -180,21 +174,21 @@ ctx.fillStyle="#222222"
         ctx.fillRect(120, 420, 560, 80)
         ctx.fillRect(120, 540, 560, 80)
         ctx.fillStyle="#fad978"
-        ctx.fillRect(120, 184, 5.6*sand-2, 72)
+        ctx.fillRect(120, 184, 5.6*equality-2, 72)
         ctx.fillStyle="#b99030"
-        ctx.fillRect(682-5.6*sandless, 184, 5.6*sandless-2, 72)
+        ctx.fillRect(682-5.6*wealth, 184, 5.6*wealth-2, 72)
         ctx.fillStyle="#dc944b"
-        ctx.fillRect(120, 304, 5.6*clayless-2, 72)
+        ctx.fillRect(120, 304, 5.6*might-2, 72)
         ctx.fillStyle="#aa6324"
-        ctx.fillRect(682-5.6*clay, 304, 5.6*clay-2, 72)
+        ctx.fillRect(682-5.6*peace, 304, 5.6*peace-2, 72)
         ctx.fillStyle="#9dc284"
-        ctx.fillRect(120, 424, 5.6*silt-2, 72)
+        ctx.fillRect(120, 424, 5.6*liberty-2, 72)
         ctx.fillStyle="#46742c"
-        ctx.fillRect(682-5.6*siltless, 424, 5.6*siltless-2, 72)
+        ctx.fillRect(682-5.6*authority, 424, 5.6*authority-2, 72)
         ctx.fillStyle="#4c85c1"
-        ctx.fillRect(120, 544, 5.6*loose-2, 72)
+        ctx.fillRect(120, 544, 5.6*tradition-2, 72)
         ctx.fillStyle="#1f538f"
-        ctx.fillRect(682-5.6*solid, 544, 5.6*solid-2, 72)
+        ctx.fillRect(682-5.6*progress, 544, 5.6*progress-2, 72)
         ctx.fillStyle="#222222"
         ctx.font="700 80px Montserrat"
         ctx.textAlign="left"
@@ -202,15 +196,15 @@ ctx.fillStyle="#222222"
         ctx.font="50px Montserrat"
         ctx.fillText(ideology, 20, 140)
         ctx.textAlign="left"
-        if (sand  > 30) {ctx.fillText(sand + "%", 130, 237.5)}
-        if (clay     > 30) {ctx.fillText(clay + "%", 130, 357.5)}
-        if (silt   > 30) {ctx.fillText(silt + "%", 130, 477.5)}
-        if (solid > 30) {ctx.fillText(solid + "%", 130, 597.5)}
+        if (equality  > 30) {ctx.fillText(equality + "%", 130, 237.5)}
+        if (might     > 30) {ctx.fillText(might + "%", 130, 357.5)}
+        if (liberty   > 30) {ctx.fillText(liberty + "%", 130, 477.5)}
+        if (tradition > 30) {ctx.fillText(tradition + "%", 130, 597.5)}
         ctx.textAlign="right"
-        if (sandless    > 30) {ctx.fillText(sandless + "%", 670, 237.5)}
-        if (clayless     > 30) {ctx.fillText(clayless + "%", 670, 357.5)}
-        if (siltless > 30) {ctx.fillText(siltless + "%", 670, 477.5)}
-        if (loose  > 30) {ctx.fillText(loose + "%", 670, 597.5)}
+        if (wealth    > 30) {ctx.fillText(wealth + "%", 670, 237.5)}
+        if (peace     > 30) {ctx.fillText(peace + "%", 670, 357.5)}
+        if (authority > 30) {ctx.fillText(authority + "%", 670, 477.5)}
+        if (progress  > 30) {ctx.fillText(progress + "%", 670, 597.5)}
 
         ctx.font="100 20px Montserrat"
         ctx.fillText("SoilTextureTest.github.io", 780, 60)
@@ -222,17 +216,6 @@ ctx.fillStyle="#222222"
         ctx.fillText("Density Axis: " + document.getElementById("society-label").innerHTML, 400, 535)
 
         document.getElementById("banner").src = c.toDataURL();
-    
-    	/* var canvas = document.getElementById("compass");
-        var ctx = canvas.getContext("2d");
-        var img = document.getElementById("compassbg");
-        ctx.drawImage(img, 0, 0);
-	    
-    	ctx.beginPath();
-	        ctx.arc( (10 * (10 - sand) ) + (5 * (10 + clay) ) + (5 * (10 + silt) ), (5 * (10 + clay) ) + (5 * (10 + silt) ), 15, 0, 2 * Math.PI);
-	        ctx.fillStyle = "red"
-	        ctx.fill();
-	        ctx.stroke(); */
     }
     </script>
 </body>
