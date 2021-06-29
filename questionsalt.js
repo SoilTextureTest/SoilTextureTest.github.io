@@ -36,12 +36,12 @@ questions = [
         }
     },
     {
-        "question": "I support rapid industrialization.",
+        "question": "The industrial revolution and its consequences have been a disaster for the human race.",
         "effect": {
-            "econ": 0,
-            "dipl": 5,
+            "econ": -5,
+            "dipl": 0,
             "govt": 0,
-            "scty": 5
+            "scty": 0
         }
     },
     {
@@ -63,7 +63,7 @@ questions = [
         }
     },
     {
-        "question": "Clay and Concrete are vital materials that led to modern infrastrucuture.",
+        "question": "Clay is important for infrastructure and societal development.",
         "effect": {
             "econ": 0,
             "dipl": 5,
@@ -90,16 +90,7 @@ questions = [
         }
     },
     {
-        "question": "Sandy Deserts are better than Mesa Deserts.",
-        "effect": {
-            "econ": 5,
-            "dipl": -5,
-            "govt": 0,
-            "scty": 0
-        }
-    },
-    {
-        "question": "The government should regulate more in public beach areas.",
+        "question": "The worst place to go to is a desert.",
         "effect": {
             "econ": -5,
             "dipl": 0,
@@ -108,25 +99,34 @@ questions = [
         }
     },
     {
-        "question": "Nothingness is what we should all be more afraid of.",
+        "question": "Sand is coarse and rough and it gets everywhere.",
         "effect": {
-            "econ": 2,
-            "dipl": 2,
-            "govt": 2,
-            "scty": 5
+            "econ": -5,
+            "dipl": 0,
+            "govt": 0,
+            "scty": 0
         }
     },
     {
-        "question": "A void is not as chaotic and bad as many people think.",
+        "question": "Swamps are perhaps the worst biome in the world.",
         "effect": {
             "econ": 0,
             "dipl": 0,
-            "govt": 0,
-            "scty": -5
+            "govt": -5,
+            "scty": 0
         }
     },
     {
-        "question": "Silt is more important than either Sand or Clay.",
+        "question": "I support a monarchy.",
+        "effect": {
+            "econ": 0,
+            "dipl": 5,
+            "govt": 0,
+            "scty": 0
+        }
+    },
+    {
+        "question": "Pirate and Mercantile societies are superior.",
         "effect": {
             "econ": 0,
             "dipl": 0,
