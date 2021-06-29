@@ -53,7 +53,7 @@
 <p>You can send these results by copying and pasting the URL at the top of the page or using the image below. Think your matched ideology was wrong? Want to help us calibrate the test? Fill in this <a href="https://forms.gle/7wjTxVXZqdxktWWD9">form</a>, to send me any comments, questions, or criticism. </p>
 <hr/>
 <img src="" id="banner">
-<canvas id="compass" width="800" height="785" style="border:2px solid #444444;" class="usdacomp"></canvas> 
+<canvas id="compass" width="800" height="790" style="border:2px solid #444444;" class="usdacomp"></canvas> 
 <button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;">Back</button> <br>
 	
 <img id="usda" src="usdacompass.png" alt="Image" style="display: none;" width="800" height="785" />
@@ -230,20 +230,18 @@ ctx.fillStyle="#222222"
  	var c = document.getElementById("compass");
 	var ctx = c.getContext("2d");
   	var img = document.getElementById("usda");
-	ctx.drawImage(img,0,0,800,785);
+	ctx.drawImage(img,0,0,800,790);
     
-                var dot = c.getContext("2d");
+	    	var ctx = c.getContext("2d");
                 ctx.beginPath();
-                ctx.arc(x_axis, y_1axis - y2_axis, 25, 0, 2 * Math.PI);
+                ctx.arc(x_axis, (y_1axis - y2_axis), 25, 0, 2 * Math.PI);
                 ctx.fillStyle = 'red';
                 ctx.fill();
                 ctx.stroke();
     
                 ctx.font="50px Montserrat"
-                ctx.textAlign="center"
                 ctx.fillStyle="#222222"
-                ctx.textAlign="right"
-                ctx.font="60px Montserrat"
+                ctx.textAlign="left"
                 ctx.fillText("soiltexturetest.github.io", 0, 0)
 		}
 		
