@@ -205,10 +205,6 @@ span.weight-300 {
     margin-right: auto;
 }
 canvas.usdacomp {
-    border-color: #444444;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 8pt;
     display: block;
     margin: 8pt;
     margin-left: auto;
