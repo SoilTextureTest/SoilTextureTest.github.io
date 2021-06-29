@@ -53,7 +53,7 @@
 <p>You can send these results by copying and pasting the URL at the top of the page or using the image below. Think your matched ideology was wrong? Want to help us calibrate the test? Fill in this <a href="https://forms.gle/7wjTxVXZqdxktWWD9">form</a>, to send me any comments, questions, or criticism. </p>
 <hr/>
 <img src="" id="banner">
-<canvas id="banner2" width="1200" height="1145" style="border:1px solid #d3d3d3;" class="usdacomp"></canvas> 
+<canvas id="compass" width="1200" height="1145" style="border:1px solid #d3d3d3;" class="usdacomp"></canvas> 
 <button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;">Back</button> <br>
 	
 <img id="usda" src="usdacompass.png" alt="Image" style="display: none;" />
@@ -227,7 +227,7 @@ ctx.fillStyle="#222222"
         document.getElementById("banner").src = c.toDataURL();
    
                 
- 	var c = document.getElementById("banner2");
+ 	var c = document.getElementById("compass");
 	var ctx = c.getContext("2d");
   	var img = document.getElementById("usda");
 	ctx.drawImage(background,0,0);
