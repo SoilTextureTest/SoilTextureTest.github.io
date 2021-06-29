@@ -56,7 +56,7 @@
 	<img src="" id="banner2">
 <button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;">Back</button> <br>
 	
-	
+<img id="usda" src="usdacompass.png" alt="Image" style="display: none;" />
 	
 <script>
     function getQueryVariable(variable)
@@ -225,13 +225,16 @@ ctx.fillStyle="#222222"
 
         document.getElementById("banner").src = c.toDataURL();
    
-                var c = document.createElement("canvas");
-                c.width = 1850;
-                c.height = 1600;
-                var ctx = c.getContext("2d");
+                
+ 	var c = document.getElementById("banner2");
+	var ctx = c.getContext("2d");
+  	var img = document.getElementById("usda");
+	ctx.drawImage(background,0,0);
+	        
+	    	ctx.width = 1850;
+                ctx.height = 1600;
                 ctx.fillStyle = "#EEEEEE"
                 ctx.fillRect(0, 0, 1850, 1600);
-                ctx.drawImage(background, 0, 0);
     
                 var dot = c.getContext("2d");
                 dot.beginPath();
@@ -249,8 +252,6 @@ ctx.fillStyle="#222222"
 		    
 		document.getElementById("banner2").src = c.toDataURL();
                 }
-            background.src = "./usdacompass.png";
-
 		
     </script>
 </body>
