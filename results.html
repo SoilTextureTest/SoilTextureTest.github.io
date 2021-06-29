@@ -56,7 +56,7 @@
 <canvas id="compass" width="800" height="763" style="border:2px solid #222222;" class="usdacomp"></canvas> 
 <button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;">Back</button> <br>
 	
-<img id="usda" src="usdacompass.png" alt="Image" style="display: none;" />
+<img id="usda" src="usdacompass.png" alt="Image" style="display: none;" width="800" height="763" />
 
 	
 <script>
@@ -234,7 +234,7 @@ ctx.fillStyle="#222222"
     
                 var dot = c.getContext("2d");
                 ctx.beginPath();
-                ctx.arc(200 + (100 * (x_axis+10)), 1150 - (1000 * (y_1axis - y2_axis)), 25, 0, 2 * Math.PI);
+                ctx.arc(200 + (100 * (x_axis+10)), 500 - (200 * (y_1axis - y2_axis)), 25, 0, 2 * Math.PI);
                 ctx.fillStyle = 'red';
                 ctx.fill();
                 ctx.stroke();
