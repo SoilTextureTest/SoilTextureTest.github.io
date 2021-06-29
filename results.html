@@ -1,7 +1,7 @@
 <head>
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
 <link href='style.css' rel='stylesheet' type='text/css'>
-<title>SoilTextureTest Results</title>
+<title>SoilTextureTest</title>
 <link rel="icon" type="x-icon" href="icon.png">
 <link rel="shortcut icon" type="x-icon" href="icon.png">
 <meta charset="utf-8">
@@ -143,6 +143,13 @@
         }
     }
 
+			
+	const urlParams = new URLSearchParams(window.location.search);
+        x_axis  = parseFloat(urlParams.get("e"))
+        y1_axis  = parseFloat(urlParams.get("d"))
+        y2_axis  = parseFloat(urlParams.get("g"))
+	
+	
     window.onload = function() {
         var c = document.createElement("canvas")
         var ctx = c.getContext("2d")
@@ -243,12 +250,7 @@ ctx.fillStyle="#222222"
 		document.getElementById("banner2").src = c.toDataURL();
                 }
             background.src = "./usdacompass.png";
-	
-		
-	const urlParams = new URLSearchParams(window.location.search);
-        x_axis  = parseFloat(urlParams.get("e"))
-        y1_axis  = parseFloat(urlParams.get("d"))
-        y2_axis  = parseFloat(urlParams.get("g"))
+
 		
     </script>
 </body>
