@@ -217,16 +217,7 @@ ctx.fillStyle="#222222"
         ctx.fillText("Density Axis: " + document.getElementById("society-label").innerHTML, 400, 535)
 
         document.getElementById("banner").src = c.toDataURL();
-    }
-	
-	const urlParams = new URLSearchParams(window.location.search);
-        x_axis  = parseFloat(urlParams.get("e"))
-        y1_axis  = parseFloat(urlParams.get("d"))
-        y2_axis  = parseFloat(urlParams.get("g"))
-    
-        window.onload = function() {
-            var background = new Image();
-            background.onload = function() {
+   
                 var c = document.createElement("canvas");
                 c.width = 1850;
                 c.height = 1600;
@@ -252,6 +243,12 @@ ctx.fillStyle="#222222"
 		document.getElementById("banner2").src = c.toDataURL();
                 }
             background.src = "./usdacompass.png";
+	
+		
+	const urlParams = new URLSearchParams(window.location.search);
+        x_axis  = parseFloat(urlParams.get("e"))
+        y1_axis  = parseFloat(urlParams.get("d"))
+        y2_axis  = parseFloat(urlParams.get("g"))
 		
     </script>
 </body>
