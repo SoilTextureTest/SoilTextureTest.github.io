@@ -53,10 +53,10 @@
 <p>You can send these results by copying and pasting the URL at the top of the page or using the image below. Think your matched ideology was wrong? Want to help us calibrate the test? Fill in this <a href="https://forms.gle/7wjTxVXZqdxktWWD9">form</a>, to send me any comments, questions, or criticism. </p>
 <hr/>
 <img src="" id="banner">
-	<img src="" id="banner2">
-<button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;">Back</button> <br>
+<canvas id="banner2" width="1200" height="1145" style="border:1px solid #d3d3d3;"></canvas> <button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;">Back</button> <br>
 	
 <img id="usda" src="usdacompass.png" alt="Image" style="display: none;" />
+
 	
 <script>
     function getQueryVariable(variable)
@@ -230,11 +230,6 @@ ctx.fillStyle="#222222"
 	var ctx = c.getContext("2d");
   	var img = document.getElementById("usda");
 	ctx.drawImage(background,0,0);
-	        
-	    	ctx.width = 1850;
-                ctx.height = 1600;
-                ctx.fillStyle = "#EEEEEE"
-                ctx.fillRect(0, 0, 1850, 1600);
     
                 var dot = c.getContext("2d");
                 dot.beginPath();
