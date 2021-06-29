@@ -146,9 +146,9 @@
 
 			
 	const urlParams = new URLSearchParams(window.location.search);
-        x_axis  = parseFloat(urlParams.get("e"))
-        y1_axis  = parseFloat(urlParams.get("d"))
-        y2_axis  = parseFloat(urlParams.get("g"))
+        x  = parseFloat(urlParams.get("e"))
+        y1  = parseFloat(urlParams.get("d"))
+        y2  = parseFloat(urlParams.get("g"))
 	
 	
     window.onload = function() {
@@ -234,7 +234,7 @@ ctx.fillStyle="#222222"
     
 	    	var ctx = c.getContext("2d");
                 ctx.beginPath();
-                ctx.arc(x_axis, (y_1axis - y2_axis), 25, 0, 2 * Math.PI);
+                ctx.arc(3, 3, 25, 0, 2 * Math.PI);
                 ctx.fillStyle = 'red';
                 ctx.fill();
                 ctx.stroke();
