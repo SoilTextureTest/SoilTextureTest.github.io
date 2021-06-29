@@ -53,7 +53,7 @@
 <p>You can send these results by copying and pasting the URL at the top of the page or using the image below. Think your matched ideology was wrong? Want to help us calibrate the test? Fill in this <a href="https://forms.gle/7wjTxVXZqdxktWWD9">form</a>, to send me any comments, questions, or criticism. </p>
 <hr/>
 <img src="" id="banner">
-<canvas id="compass" width="1200" height="1145" style="border:1px solid #d3d3d3;" class="usdacomp"></canvas> 
+<!-- <canvas id="compass" width="1200" height="1145" style="border:1px solid #d3d3d3;" class="usdacomp"></canvas> -->
 <button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;">Back</button> <br>
 	
 <img id="usda" src="usdacompass.png" alt="Image" style="display: none;" />
@@ -155,7 +155,7 @@
         var c = document.createElement("canvas")
         var ctx = c.getContext("2d")
         c.width = 800;
-        c.height = 650;
+        c.height = 1000;
         ctx.fillStyle = "#EEEEEE"
         ctx.fillRect(0,0,800,650);
 
@@ -223,14 +223,11 @@ ctx.fillStyle="#222222"
         ctx.fillText("Clay Axis: " + document.getElementById("diplomatic-label").innerHTML, 400, 295)
         ctx.fillText("Silt Axis: " + document.getElementById("state-label").innerHTML, 400, 415)
         ctx.fillText("Density Axis: " + document.getElementById("society-label").innerHTML, 400, 535)
+	    
+	var img = document.getElementById("usda");
+  	ctx.drawImage(img, 800, 800);
 
-        document.getElementById("banner").src = c.toDataURL();
-   
-                
- 	var c = document.getElementById("compass");
-	var ctx = c.getContext("2d");
-  	var img = document.getElementById("usda");
-	ctx.drawImage(background,0,0);
+        /* document.getElementById("banner").src = c.toDataURL();
     
                 var dot = c.getContext("2d");
                 ctx.beginPath();
@@ -244,7 +241,7 @@ ctx.fillStyle="#222222"
                 ctx.fillStyle="#222222"
                 ctx.textAlign="right"
                 ctx.font="60px Montserrat"
-                ctx.fillText("soiltexturetest.github.io", 1100, 800)
+                ctx.fillText("soiltexturetest.github.io", 1100, 800) */
 		}
 		
     </script>
